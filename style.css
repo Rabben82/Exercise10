@@ -1,10 +1,10 @@
 body {
-    background-image: url('./Assets/stars2.jpg'); /* Set the background image URL */
-    background-size: cover; /* Cover the entire viewport with the image */
-    background-position: center; /* Center the image */
-    background-attachment: fixed; /* Keep the background fixed while scrolling */
-    margin: 0; /* Remove default body margin */
-    padding: 0; /* Remove default body padding */
+    background-image: url('./Assets/stars2.jpg'); 
+    background-size: cover; 
+    background-position: center; 
+    background-attachment: fixed; 
+    margin: 0; 
+    padding: 0; 
 }
 p{
     text-align: center;
@@ -24,8 +24,8 @@ p{
     font-family: monospace;
 }
 .container {
-    position: relative; /* Create a stacking context */
-    z-index: 1; /* Ensure the content is above the background */
+    position: relative; 
+    z-index: 1; 
 }
 #img-left, #img-right{
     width: 300px;
