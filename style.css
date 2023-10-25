@@ -48,9 +48,6 @@ p{
     display: flex;
     justify-content: center;
 }
-footer{
-    margin-top: 40%;
-    color: white;
-    text-align: center;
-    font-family: monospace;
+textarea{
+    overflow: hidden;
 }
