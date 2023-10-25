@@ -1,4 +1,5 @@
 let userInput;
+const url = 'https://www.swapi.tech/api/people/?name=';
 
 const inputField = document.querySelector('#addcharacter');
 const output = document.querySelector('#output-characters');
@@ -30,7 +31,7 @@ function GetApi(userInput) {
     const ROW_DEFAULT = 5;
     const ROW_EXTRA = 11;
 
-    fetch(`https://www.swapi.tech/api/people/?name=${userInput}`, {
+    fetch(`${url}${userInput}`, {
         method: 'GET',
         headers: {
             'Accept': 'application/json'
