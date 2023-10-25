@@ -13,6 +13,7 @@ inputField.addEventListener('change', function (){
 
 // Function to initiate the API request when the search button is clicked
 searchButton.addEventListener('click', function(){
+    inputField.value = '';
     GetApi(userInput);
 })
 
@@ -21,6 +22,7 @@ document.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         userInput = inputField.value;
         event.preventDefault();
+        inputField.value = '';
         GetApi(userInput);
     }
 });
