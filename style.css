@@ -1,0 +1,56 @@
+body {
+    background-image: url('./Assets/stars2.jpg'); /* Set the background image URL */
+    background-size: cover; /* Cover the entire viewport with the image */
+    background-position: center; /* Center the image */
+    background-attachment: fixed; /* Keep the background fixed while scrolling */
+    margin: 0; /* Remove default body margin */
+    padding: 0; /* Remove default body padding */
+}
+p{
+    text-align: center;
+    font-family: monospace;
+    color: white;
+}
+.top-box{
+    margin-top: 2%;
+}
+#form-input label, #form-input{
+    font-family: monospace;
+    color: white;
+}
+#output{
+    text-align: center;
+    margin-top: 5%;
+    font-family: monospace;
+}
+.container {
+    position: relative; /* Create a stacking context */
+    z-index: 1; /* Ensure the content is above the background */
+}
+#img-left, #img-right{
+    width: 300px;
+}
+#img-center, #img-starwars img{
+    width: 500px;
+}
+.fit-content{
+    width: fit-content;
+}
+.fit-contentright{
+    width: fit-content;
+    display: flex;
+    align-items: end;
+}
+#middle-box{
+    padding-top: 10%;
+}
+.row{
+    display: flex;
+    justify-content: center;
+}
+footer{
+    margin-top: 40%;
+    color: white;
+    text-align: center;
+    font-family: monospace;
+}
