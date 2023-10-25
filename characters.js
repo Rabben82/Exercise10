@@ -2,17 +2,20 @@ let userInput;
 
 const inputField = document.querySelector('#addcharacter');
 const output = document.querySelector('#output-characters');
-const searchButton = document.querySelector('#add-button');
+const searchButton = document.querySelector('#search-button');
 
+// Function to handle user input change
 inputField.addEventListener('change', function (){
     userInput = inputField.value;
     
 });
 
+// Function to initiate the API request when the search button is clicked
 searchButton.addEventListener('click', function(){
     GetApi(userInput);
 })
 
+// Function to initiate the API request when the Enter key is pressed
 document.addEventListener('keydown', function (event) {
     if (event.key === 'Enter') {
         userInput = inputField.value;
@@ -21,7 +24,12 @@ document.addEventListener('keydown', function (event) {
     }
 });
 
+// Function to make the API request and display character information
 function GetApi(userInput) {
+
+    const ROW_DEFAULT = 5;
+    const ROW_EXTRA = 11;
+
     fetch(`https://www.swapi.tech/api/people/?name=${userInput}`, {
         method: 'GET',
         headers: {
@@ -34,26 +42,23 @@ function GetApi(userInput) {
         throw new Error('Failed to get API');
     })
     .then(data => {
-        console.log(data); // Log the entire API response for inspection
-
-        output.innerHTML = ''; // Clear the existing content
+      
+        output.innerHTML = ''; 
 
         if(data.result.length > 0)
         {
             data.result.forEach(result => {
-                output.rows = '5';
+
+                output.rows = (data.result.length > 1) ? ROW_EXTRA : ROW_DEFAULT;
+
                 const { name, height, mass, gender, hair_color } = result.properties;
-                if(data.result.length > 1)
-                {
-                    output.rows = '11';
-                }
-                output.innerHTML += `Namn: ${name}\nHeight: ${height}\nMass: ${mass}\nGender: ${gender}\nHair Color: ${hair_color}\n\n`;
                 
+                output.innerHTML += `Namn: ${name}\nHeight: ${height}\nMass: ${mass}\nGender: ${gender}\nHair Color: ${hair_color}\n\n`;
             })
         }
-         else{
+        else{
             output.innerHTML = 'Character not found';
-         }   
+        }   
     })
     .catch(err => console.log(err));
 }
