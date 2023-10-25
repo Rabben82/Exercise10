@@ -61,5 +61,5 @@ function GetApi(userInput) {
             output.innerHTML = 'Character not found';
         }   
     })
-    .catch(err => console.log(err));
+    .catch(err => console.error('Error fetching character:', err));
 }
